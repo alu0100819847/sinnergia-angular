@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.com/alu0100819847/sinnergia-spring.svg?branch=master)](https://travis-ci.com/alu0100819847/sinnergia-spring)
+[![Build Status](https://travis-ci.com/alu0100819847/sinnergia-angular.svg?branch=master)](https://travis-ci.com/alu0100819847/sinnergia-angular)
 
-# SinnergiaSpring
+# SinnergiaAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 

@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sinnergia-spring": {
+    "sinnergia-angular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sinnergia-spring",
+            "outputPath": "dist/sinnergia-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sinnergia-spring:build"
+            "browserTarget": "sinnergia-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sinnergia-spring:build:production"
+              "browserTarget": "sinnergia-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sinnergia-spring:build"
+            "browserTarget": "sinnergia-angular:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "sinnergia-spring:serve"
+            "devServerTarget": "sinnergia-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sinnergia-spring:serve:production"
+              "devServerTarget": "sinnergia-angular:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "sinnergia-spring"
+  "defaultProject": "sinnergia-angular"
 }
