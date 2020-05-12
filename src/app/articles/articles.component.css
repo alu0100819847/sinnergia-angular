@@ -12,6 +12,15 @@
   min-height: 100vh
 }
 
+.articleBox{
+  background-color: #ffffff80;
+  padding: 20px;
+  height: 40vh;
+  box-shadow: 0 0 10px #8475758c;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .articleBoxImage{
   height: 75%;
   margin:0px;
@@ -31,20 +40,23 @@
   max-height: 100%;
 }
 
-.articleBox{
-  background-color: #ffffff80;
-  padding: 20px;
-  height: 40vh;
-  box-shadow: 0 0 10px #8475758c;
-}
+
 
 .articleName{
   color: grey;
+  height: 20%;
+  margin: 0px;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .articlePrice{
   color: black;
   font-size: 1.3em;
+  justify-content: center;
+  margin: 0px;
 }
 
 .articleList{

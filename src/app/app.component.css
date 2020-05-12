@@ -1,6 +1,6 @@
 
 .toolbar {
-  position: static;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -11,6 +11,7 @@
   color: black;
   font-weight: 600;
   box-shadow: 0 0 20px #8475758c;
+  background-image: url("/src/assets/img/backgrounds.jpeg");
 }
 
 .toolbar img {
