@@ -18,8 +18,14 @@
     <a class="titleNavBar" href="#"></a>
   </div>
   <div class="spacer"></div>
-  <div class="navBarButtonBar">
-    <a class="buttonNavBar buttonHover" href="#">SUBSCRIBE</a>
+  <div *ngIf="!this.isLoged()" class="navBarButtonBar">
+    <a class="buttonNavBar buttonHover" (click)="openLogin()">LOGIN/REGISTER</a>
+  </div>
+  <div *ngIf="this.isLoged()" class="navBarButtonBar">
+    <a class="buttonNavBar buttonHover" (click)="openLogin()">ADMIN</a>
+  </div>
+  <div *ngIf="this.isLoged()" class="navBarButtonBar">
+    <a class="buttonNavBar buttonHover" (click)="logout()">LOGOUT</a>
   </div>
 </div>
 
