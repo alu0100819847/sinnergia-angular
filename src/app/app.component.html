@@ -22,7 +22,7 @@
     <a class="buttonNavBar buttonHover" (click)="openLogin()">LOGIN/REGISTER</a>
   </div>
   <div *ngIf="this.isLoged()" class="navBarButtonBar">
-    <a class="buttonNavBar buttonHover" (click)="openLogin()">ADMIN</a>
+    <a class="buttonNavBar buttonHover" routerLink="/Admin">ADMIN</a>
   </div>
   <div *ngIf="this.isLoged()" class="navBarButtonBar">
     <a class="buttonNavBar buttonHover" (click)="logout()">LOGOUT</a>

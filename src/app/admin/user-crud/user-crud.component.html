@@ -1,0 +1,28 @@
+
+<div class="row title-block">
+  <div class="col s3 titles">Email</div>
+  <div class="col s2 titles">Name</div>
+  <div class="col s3 titles">Surname</div>
+  <div class="col s2 titles">Roles</div>
+</div>
+
+  <div class="row" *ngFor="let user of users">
+    <div class="col s3 admin-field">{{user.email}}</div>
+    <div class="col s2 admin-field">{{user.name}}</div>
+    <div class="col s3 admin-field">{{user.surname}}</div>
+    <div class="col s2 admin-field">{{user.roles}}</div>
+    <div class="col">
+      <button class="adminActionButton admin-button" [matMenuTriggerFor]="actions" mat-menu-item>
+        <span class="material-icons">menu</span>
+      </button>
+      <mat-menu #actions="matMenu">
+        <button  mat-menu-item (click)="edit(user)">
+          <span>Edit</span>
+        </button>
+        <button mat-menu-item (click)="delete(user.email)">
+          <span>Delete</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+

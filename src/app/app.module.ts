@@ -12,6 +12,13 @@ import { RegisterComponent } from './user/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpService} from './services/http.service';
 import {SessionService} from './services/session.service';
+import { AdminComponent } from './admin/admin.component';
+import { UserCrudComponent } from './admin/user-crud/user-crud.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { EditUserComponent } from './admin/user-crud/edit-user/edit-user.component';
+import { ArticleCrudComponent } from './admin/article-crud/article-crud.component';
+import { CreateArticleComponent } from './admin/article-crud/create-article/create-article.component';
+import { EditArticleComponent } from './admin/article-crud/edit-article/edit-article.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +26,12 @@ import {SessionService} from './services/session.service';
     ArticlesComponent,
     UserComponent,
     RegisterComponent,
+    AdminComponent,
+    UserCrudComponent,
+    EditUserComponent,
+    ArticleCrudComponent,
+    CreateArticleComponent,
+    EditArticleComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +40,7 @@ import {SessionService} from './services/session.service';
     MatDialogModule,
     FormsModule,
     HttpClientModule,
+    MatMenuModule,
 
   ],
   providers: [

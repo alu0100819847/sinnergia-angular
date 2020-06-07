@@ -1,0 +1,22 @@
+<h1>User</h1>
+<form>
+  <label> Id
+    <input type="text" [(ngModel)] = "user.id" name="id" disabled>
+  </label>
+  <label> Email
+    <input type="text" [(ngModel)] = "user.email" name="email">
+  </label>
+  <label> Name
+    <input type="text" [(ngModel)]="user.name" name="name">
+  </label>
+  <label> Surname
+    <input type="text" [(ngModel)]="user.surname" name="surname">
+  </label>
+  <label> Roles
+    <select class="select_user" [(ngModel)]="user.roles" name="roles" multiple>
+      <option value="CUSTOMER">CUSTOMER</option>
+      <option value="ADMIN">ADMIN</option>
+    </select>
+  </label>
+  <button class="btn registerFormButton" (click)="this.edit()">Change</button>
+</form>

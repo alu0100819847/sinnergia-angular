@@ -45,6 +45,36 @@ export class HttpService {
     );
   }
 
+  get(endpoint: string, body?: object): Observable<any> {
+    return this.http.get(this.uri + endpoint, this.getOptions());
+  }
+
+  put(endpoint: string, body?: object): Observable<any> {
+    return this.http.put(this.uri + endpoint, body, this.getOptions()).pipe(
+      map(response => {
+          console.log(response);
+          return this.extractData(response);
+        }
+      ), catchError(error => {
+        console.log(error);
+        return error;
+      })
+    );
+  }
+
+  delete(endpoint: string): Observable<any> {
+    console.log(this.uri + endpoint);
+    return this.http.delete(this.uri + endpoint, this.getOptions()).pipe(
+      map(response => this.extractData(response)
+      ), catchError(error => {
+        console.log(error);
+        return error;
+      })
+    );
+  }
+
+
+
   getOptions(): any {
     this.headers = new HttpHeaders();
     this.headers = this.headers.append('Access-Control-Allow-Origin', '*');

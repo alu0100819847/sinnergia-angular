@@ -1,0 +1,16 @@
+<h1>Article</h1>
+<form>
+  <label> Name
+    <input type="text" [(ngModel)] = "article.name" name="name">
+  </label>
+  <label> Price
+    <input type="number" [(ngModel)]="article.price" name="price">
+  </label>
+  <label> Stock
+    <input type="number" [(ngModel)]="article.stock" name="stock">
+  </label>
+  <label> Description
+    <textarea type="textarea" [(ngModel)]="article.description" name="stock"></textarea>
+  </label>
+  <button class="btn registerFormButton" (click)="this.create()">Create</button>
+</form>

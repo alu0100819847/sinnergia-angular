@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
 
   register() {
     this.http.register(this.user).subscribe( (a) =>
-      console.log('alojomora: ' + a)
+      console.log('dummy: ' + a)
     );
   }
 
