@@ -45,6 +45,19 @@ export class HttpService {
     );
   }
 
+  postImage(endpoint: string, body?: object): Observable<any> {
+    return this.http.post(this.uri + endpoint, body, this.getOptionsImage()).pipe(
+      map(response => {
+          console.log(response);
+          return this.extractData(response);
+        }
+      ), catchError(error => {
+        console.log(error);
+        return error;
+      })
+    );
+  }
+
   get(endpoint: string, body?: object): Observable<any> {
     return this.http.get(this.uri + endpoint, this.getOptions());
   }
@@ -80,6 +93,24 @@ export class HttpService {
     this.headers = this.headers.append('Access-Control-Allow-Origin', '*');
     this.params = new HttpParams();
     this.responseType = 'json';
+
+    if (this.session.getToken() !== null) {
+      this.headers.append('Authorization', 'Bearer ' + this.session.getToken());
+    }
+    const options: any = {
+      headers: this.headers,
+      params: this.params,
+      responseType: this.responseType,
+      observe: 'response'
+    };
+    return options;
+  }
+
+  getOptionsImage(): any {
+    this.headers = new HttpHeaders();
+    this.headers = this.headers.append('Access-Control-Allow-Origin', '*');
+    this.params = new HttpParams();
+    this.responseType = 'arraybuffer';
 
     if (this.session.getToken() !== null) {
       this.headers.append('Authorization', 'Bearer ' + this.session.getToken());

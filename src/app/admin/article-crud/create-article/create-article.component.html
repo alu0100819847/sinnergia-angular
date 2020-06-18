@@ -1,16 +1,17 @@
 <h1>Article</h1>
-<form>
+<form [formGroup] = "uploadForm">
   <label> Name
-    <input type="text" [(ngModel)] = "article.name" name="name">
+    <input type="text" formControlName="name" name="name">
   </label>
   <label> Price
-    <input type="number" [(ngModel)]="article.price" name="price">
+    <input type="number" formControlName="price"  name="price">
   </label>
   <label> Stock
-    <input type="number" [(ngModel)]="article.stock" name="stock">
+    <input type="number" formControlName="stock" name="stock">
   </label>
   <label> Description
-    <textarea type="textarea" [(ngModel)]="article.description" name="stock"></textarea>
+    <textarea type="textarea" formControlName="description" name="description"></textarea>
   </label>
+  <input type="file" name="files" (change)="onFileSelect($event)">
   <button class="btn registerFormButton" (click)="this.create()">Create</button>
 </form>

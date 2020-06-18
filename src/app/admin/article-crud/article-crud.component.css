@@ -1,0 +1,30 @@
+.adminActionButton{
+  margin: 0px;
+  padding: 0px;
+  line-height: 0px;
+  height: auto;
+}
+
+.titles{
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #555050;
+  margin:10px;
+}
+
+.title-block{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.admin-field{
+  background-color: #ffffff6e;
+  box-shadow: 0 0 10px #8475758c;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.admin-button{
+  margin: 10px;
+}

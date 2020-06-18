@@ -4,4 +4,6 @@ export interface ArticleAdminModel {
   price: number;
   stock: number;
   description: string;
+  file: string;
+  image: any;
 }

@@ -7,7 +7,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { UserComponent } from './user/user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule} from '@angular/material/dialog';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './user/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpService} from './services/http.service';
@@ -33,16 +33,17 @@ import { EditArticleComponent } from './admin/article-crud/edit-article/edit-art
     CreateArticleComponent,
     EditArticleComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-    FormsModule,
-    HttpClientModule,
-    MatMenuModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        FormsModule,
+        HttpClientModule,
+        MatMenuModule,
+        ReactiveFormsModule,
 
-  ],
+    ],
   providers: [
     HttpService,
     SessionService

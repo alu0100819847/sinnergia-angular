@@ -3,4 +3,5 @@ export interface ArticleCreateModel {
   price: number;
   stock: number;
   description: string;
+  file: any[];
 }
