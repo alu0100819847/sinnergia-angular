@@ -19,6 +19,8 @@ import { EditUserComponent } from './admin/user-crud/edit-user/edit-user.compone
 import { ArticleCrudComponent } from './admin/article-crud/article-crud.component';
 import { CreateArticleComponent } from './admin/article-crud/create-article/create-article.component';
 import { EditArticleComponent } from './admin/article-crud/edit-article/edit-article.component';
+import { NotificationService } from './services/notification.service';
+import {ToastrModule, ToastrService} from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -42,11 +44,13 @@ import { EditArticleComponent } from './admin/article-crud/edit-article/edit-art
         HttpClientModule,
         MatMenuModule,
         ReactiveFormsModule,
+        ToastrModule.forRoot()
 
     ],
   providers: [
     HttpService,
-    SessionService
+    SessionService,
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })

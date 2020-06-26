@@ -21,11 +21,14 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-
   }
 
   isLoged() {
     return this.session.isLoged();
+  }
+
+  isAdmin(){
+    return this.isLoged() && this.session.isAdmin();
   }
 
   logout() {

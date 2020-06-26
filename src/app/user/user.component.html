@@ -1,19 +1,35 @@
 <h1>Login</h1>
-<form>
+<form [formGroup]="uploadForm">
+
   <label> Email
-    <input type="text" [(ngModel)] = "user.email" name="email">
+    <input type="email" class="form-control" name="email"  formControlName="email"
+           [class.inputError] = "emailIsNotValid()">
   </label>
   <label> Password
-    <input type="password" [(ngModel)]="user.password" name="password">
+    <input type="password" class="form-control" name="password" formControlName="password"
+           [class.inputError] = "passwordIsNotValid()">
   </label>
   <div class="row">
+    <p>
+      <small class="errorMessage"  *ngIf="emailIsNotValid()">
+        Please provide a valid email address
+      </small>
+    </p>
+    <p>
+      <small class="errorMessage"  *ngIf="passwordIsNotValid()">
+        Invalid password
+      </small>
+    </p>
+  </div>
+  <div class="row">
     <div class="col s3">
-      <button class="btn loginFormButton" (click)="login()">login</button>
+      <button class="btn loginFormButton" (click)="login()" [disabled]="emailIsNotValid() || passwordIsNotValid()">login</button>
     </div>
     <div class="col s3">
       <button class="btn loginFormButton" (click)="openRegister()">register</button>
     </div>
   </div>
+
 
 </form>
 

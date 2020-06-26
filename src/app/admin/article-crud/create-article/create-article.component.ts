@@ -38,13 +38,15 @@ export class CreateArticleComponent implements OnInit {
     formData.append('price', this.uploadForm.get('price').value);
     formData.append('stock', this.uploadForm.get('stock').value);
     formData.append('description', this.uploadForm.get('description').value);
-    console.log();
+    console.log("hola");
     if (this.uploadForm.get('file').value) {
       formData.append('file', this.uploadForm.get('file').value);
     }
     this.http.post('/article', formData).subscribe( response => {
+      console.log('dummy');
+      console.log('dummy' + response);
       this.dialog.closeAll();
-      console.log(response);
+      console.log('dummy' + response);
     });
   }
 }
