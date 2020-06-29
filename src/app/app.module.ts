@@ -21,6 +21,11 @@ import { CreateArticleComponent } from './admin/article-crud/create-article/crea
 import { EditArticleComponent } from './admin/article-crud/edit-article/edit-article.component';
 import { NotificationService } from './services/notification.service';
 import {ToastrModule, ToastrService} from 'ngx-toastr';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { CategoryCrudComponent } from './admin/category-crud/category-crud.component';
+import { CreateCategoryComponent } from './admin/category-crud/create-category/create-category.component';
 
 @NgModule({
   declarations: [
@@ -34,19 +39,24 @@ import {ToastrModule, ToastrService} from 'ngx-toastr';
     ArticleCrudComponent,
     CreateArticleComponent,
     EditArticleComponent,
+    CategoryCrudComponent,
+    CreateCategoryComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatDialogModule,
-        FormsModule,
-        HttpClientModule,
-        MatMenuModule,
-        ReactiveFormsModule,
-        ToastrModule.forRoot()
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    FormsModule,
+    HttpClientModule,
+    MatMenuModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule
 
-    ],
+  ],
   providers: [
     HttpService,
     SessionService,

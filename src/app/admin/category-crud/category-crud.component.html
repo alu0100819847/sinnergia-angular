@@ -1,0 +1,25 @@
+
+<div class="row title-block">
+  <div class="col s2 titles">Name</div>
+  <div class="col s2 titles">Family</div>
+  <div class="col s2 titles"></div>
+  <div class="col s2 titles"><button class="btn" (click)="create()">New</button></div>
+</div>
+
+<div class="row" *ngFor="let category of categories">
+  <div class="col s2 admin-field">{{category.name}}</div>
+  <div class="col s2 admin-field">{{getName(category.family)}}</div>
+  <div class="col">
+    <button class="adminActionButton admin-button" [matMenuTriggerFor]="actions" mat-menu-item>
+      <span class="material-icons">menu</span>
+    </button>
+    <mat-menu #actions="matMenu">
+      <button  mat-menu-item (click)="edit(category)">
+        <span>Edit</span>
+      </button>
+      <button mat-menu-item (click)="delete(category.id)">
+        <span>Delete</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>

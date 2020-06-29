@@ -3,13 +3,16 @@ import {TokenModel} from './token.model';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {CookieService} from 'ngx-cookie-service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class SessionService {
 
   private token: TokenModel = {token: null, email: null, roles: null};
 
   constructor(private cookies: CookieService) {
     this.checkToken();
+    console.log(this.token);
     console.log(new JwtHelperService().getTokenExpirationDate(this.getToken()));
   }
 

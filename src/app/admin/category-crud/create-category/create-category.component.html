@@ -1,0 +1,11 @@
+<h1>Category</h1>
+<form [formGroup] = "uploadForm">
+  <label> Name
+    <input type="text" formControlName="name" name="name">
+  </label>
+  <select class="category-select" formControlName="categoryFamilyId" name="categoryFamilyId">
+    <option>No Family</option>
+    <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+  </select>
+  <button class="btn registerFormButton" (click)="this.create()">Create</button>
+</form>

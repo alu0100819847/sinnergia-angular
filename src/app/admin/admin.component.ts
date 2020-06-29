@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.session.checkAuthorization(this.permission)) {
-      //this.route.navigate(['/']).then();
+      this.route.navigate(['/']).then();
     }
   }
 

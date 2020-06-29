@@ -7,7 +7,9 @@ import {RegisterModel} from '../user/register/register.model';
 import {SessionService} from './session.service';
 import {NotificationService} from './notification.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class HttpService {
   private headers: HttpHeaders;
   private uri = 'http://localhost:8080';

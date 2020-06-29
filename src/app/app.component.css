@@ -7,11 +7,12 @@
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #00000000;
+
   color: black;
   font-weight: 600;
   box-shadow: 0 0 20px #8475758c;
-  background-image: url("/src/assets/img/backgrounds.jpeg");
+  background-image: url("src/assets/img/backgrounds.jpeg");
+  z-index: 10;
 }
 
 .toolbar img {
@@ -64,4 +65,12 @@
 }
 .center {
   justify-content: center;
+}
+
+.main-content{
+  background-color: #00000000;
+}
+
+.side-content {
+  background-color: #ffffffa1;
 }
