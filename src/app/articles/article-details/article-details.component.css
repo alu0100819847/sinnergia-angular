@@ -1,0 +1,29 @@
+.articleImg{
+  max-width: 80%;
+  max-height: 100%;
+}
+
+.articleBoxImage{
+  height: 75%;
+  margin:0px;
+  justify-content: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.articleTitle {
+  font-weight: 700;
+  font-size: 18px;
+  color: #656363;
+  justify-content: center;
+}
+
+.articlePrice {
+  font-weight: bolder;
+  font-size: 30px;
+  color: green;
+}
+
+.articleDescription {
+
+}

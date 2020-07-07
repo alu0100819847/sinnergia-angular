@@ -1,8 +1,9 @@
 
 <div class="row title-block">
   <div class="col s2 offset-s1 titles">Name</div>
-  <div class="col s2 titles">Price</div>
-  <div class="col s2 titles">Stock</div>
+  <div class="col s1 titles">Price</div>
+  <div class="col s1 titles">Stock</div>
+  <div class="col s2 titles">Category</div>
   <div class="col s2 titles">Description</div>
   <div class="col s2 titles"><button class="btn" (click)="create()">New</button></div>
 </div>
@@ -10,8 +11,9 @@
 <div class="row" *ngFor="let article of articles">
   <div class="col s1 "><img [src]="article.image" alt="1" style="height:50px;width:50px"> </div>
   <div class="col s2 admin-field">{{article.name}}</div>
-  <div class="col s2 admin-field">{{article.price}}</div>
-  <div class="col s2 admin-field">{{article.stock}}</div>
+  <div class="col s1 admin-field">{{article.price}}</div>
+  <div class="col s1 admin-field">{{article.stock}}</div>
+  <div class="col s2 admin-field">{{printCategoryName(article.category)}}</div>
   <div class="col s2 admin-field">{{article.description}}</div>
   <div class="col">
     <button class="adminActionButton admin-button" [matMenuTriggerFor]="actions" mat-menu-item>

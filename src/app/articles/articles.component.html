@@ -3,42 +3,12 @@
 
   <div class="col l10 m10 s12 offset-m1 offset-l1 row">
     <div *ngFor="let article of articles" class="col s12 m4 l3">
-      <div class="articleBox">
+      <div class="articleBox" (click) = "details(article)">
         <div class="row valign-wrapper articleBoxImage">
-          <img class="articleImg" src="{{article.image}}"/>
+          <img class="articleImg" [src]="article.image"/>
         </div>
 
-        <div class="row center-align valign-wrapper articleName">{{article.name}}</div>
-        <div class="row center-align articlePrice">{{article["price"]}} €</div>
-      </div>
-    </div>
-    <div *ngFor="let article of articles" class="col s12 m4 l3">
-      <div class="articleBox">
-        <div class="row valign-wrapper articleBoxImage">
-          <img class="articleImg" src="{{article.image}}"/>
-        </div>
-
-        <div class="row center-align valign-wrapper articleName"><p>{{article.name}}</p></div>
-        <div class="row center-align articlePrice">{{article["price"]}} €</div>
-      </div>
-    </div>
-    <div *ngFor="let article of articles" class="col s12 m4 l3">
-      <div class="articleBox">
-        <div class="row valign-wrapper articleBoxImage">
-          <img class="articleImg" src="{{article.image}}"/>
-        </div>
-
-        <div class="row center-align valign-wrapper articleName">{{article.name}}</div>
-        <div class="row center-align articlePrice">{{article["price"]}} €</div>
-      </div>
-    </div>
-    <div *ngFor="let article of articles" class="col s12 m4 l3">
-      <div class="articleBox">
-        <div class="row valign-wrapper articleBoxImage">
-          <img class="articleImg" src="{{article.image}}"/>
-        </div>
-
-        <div class="row center-align valign-wrapper articleName">{{article.name}}</div>
+        <div class="row center-align valign-wrapper articleName"><p class="articleNameBox">{{article.name}}</p></div>
         <div class="row center-align articlePrice">{{article["price"]}} €</div>
       </div>
     </div>

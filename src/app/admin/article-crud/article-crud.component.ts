@@ -65,4 +65,10 @@ export class ArticleCrudComponent implements OnInit {
       }
     );
   }
+
+  printCategoryName(category) {
+    console.log(category);
+    if (category != null) { return category.name; }
+    return 'None';
+  }
 }

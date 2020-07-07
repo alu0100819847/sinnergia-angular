@@ -7,6 +7,7 @@ import {CategoryAdminModel} from './models/category-admin.model';
 import {HttpService} from '../../services/http.service';
 import {CreateCategoryComponent} from './create-category/create-category.component';
 import {SubcategoriesModel} from './models/subcategories.model';
+import {EditCategoryComponent} from './edit-category/edit-category.component';
 
 @Component({
   selector: 'app-category-crud',
@@ -23,12 +24,12 @@ export class CategoryCrudComponent implements OnInit {
     this.getCategories();
   }
 
-  edit(article: CategoryAdminModel) {
-    /*const dialogConfig = new MatDialogConfig();
-    dialogConfig.data = article;
-    this.dialog.open(EditArticleComponent, dialogConfig).afterClosed().subscribe(() => {
-      this.getArticles();
-    });*/
+  edit(category: CategoryAdminModel) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = category;
+    this.dialog.open(EditCategoryComponent, dialogConfig).afterClosed().subscribe(() => {
+      this.getCategories();
+    });
   }
 
   create() {
@@ -40,11 +41,10 @@ export class CategoryCrudComponent implements OnInit {
   }
 
   delete(id: string) {
-    /*
-    this.http.delete('/article/' + id).subscribe( response => {
+    this.http.delete('/category/' + id).subscribe( response => {
       console.log('dummy: ' + response);
-      this.getArticles();
-    });*/
+      this.getCategories();
+    });
   }
 
   getCategories() {

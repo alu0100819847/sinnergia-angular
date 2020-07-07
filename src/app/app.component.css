@@ -61,7 +61,7 @@
 }
 
 .buttonHover:hover {
-  background-color: #ffffff2b;
+  background-color: #f4ffc32b;
 }
 .center {
   justify-content: center;
@@ -69,8 +69,18 @@
 
 .main-content{
   background-color: #00000000;
+  min-height: 90vh;
 }
 
 .side-content {
   background-color: #ffffffa1;
+
+}
+
+.shopcartButton{
+  height: 50%;
+}
+
+.yay {
+  min-width: 30vw;
 }

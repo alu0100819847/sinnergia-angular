@@ -26,6 +26,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { CategoryCrudComponent } from './admin/category-crud/category-crud.component';
 import { CreateCategoryComponent } from './admin/category-crud/create-category/create-category.component';
+import { EditCategoryComponent } from './admin/category-crud/edit-category/edit-category.component';
+import { ArticleDetailsComponent } from './articles/article-details/article-details.component';
+import {CartshopService} from './services/cartshop.service';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,8 @@ import { CreateCategoryComponent } from './admin/category-crud/create-category/c
     EditArticleComponent,
     CategoryCrudComponent,
     CreateCategoryComponent,
+    EditCategoryComponent,
+    ArticleDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import { CreateCategoryComponent } from './admin/category-crud/create-category/c
   providers: [
     HttpService,
     SessionService,
-    NotificationService
+    NotificationService,
+    CartshopService
   ],
   bootstrap: [AppComponent]
 })

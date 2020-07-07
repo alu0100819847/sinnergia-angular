@@ -6,4 +6,8 @@ export interface ArticleAdminModel {
   description: string;
   file: string;
   image: any;
+  category: {
+    id: string;
+    name: string;
+  };
 }

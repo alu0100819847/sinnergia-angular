@@ -12,7 +12,6 @@ export class SessionService {
 
   constructor(private cookies: CookieService) {
     this.checkToken();
-    console.log(this.token);
     console.log(new JwtHelperService().getTokenExpirationDate(this.getToken()));
   }
 

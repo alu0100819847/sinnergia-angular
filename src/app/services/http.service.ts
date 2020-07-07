@@ -24,11 +24,8 @@ export class HttpService {
   login(user: UserModel): Observable<any> {
     return this.post('/users', user).pipe(
       map(token => {
-        console.log(token);
         this.session.createSession(token);
-        console.log(this.session.getToken());
       }), catchError(error => {
-        console.log(error);
         return error;
       })
     );
@@ -51,7 +48,6 @@ export class HttpService {
   }
 
   get(endpoint: string, body?: object): Observable<any> {
-
     return this.http.get(this.uri + endpoint, this.getOptions());
   }
 
@@ -66,7 +62,6 @@ export class HttpService {
   }
 
   delete(endpoint: string): Observable<any> {
-    console.log(this.uri + endpoint);
     return this.http.delete(this.uri + endpoint, this.getOptions()).pipe(
       map(response => this.extractData(response)
       ), catchError(error => {
@@ -82,7 +77,6 @@ export class HttpService {
     this.params = new HttpParams();
     this.responseType = 'json';
     if (this.session.getToken()) {
-      console.log(this.session.getToken());
       this.headers = new HttpHeaders({
         'Access-Control-Allow-Origin': '*',
         Authorization : 'Bearer ' + this.session.getToken()
@@ -97,14 +91,11 @@ export class HttpService {
   }
 
   private extractData(response) {
-    console.log(response);
     return response.body;
   }
 
   handleError(error) {
     const myerror = error.error.message;
-    console.log(error);
-    console.log(myerror);
     this.notification.showError(myerror, 'error');
     return throwError(error.message);
   }

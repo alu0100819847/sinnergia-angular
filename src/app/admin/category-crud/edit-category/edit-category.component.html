@@ -1,0 +1,10 @@
+<h1>Edit Category</h1>
+<form [formGroup] = "uploadForm">
+  <label> Id
+    <input type="text" formControlName="id" name="id" disabled>
+  </label>
+  <label> Name
+    <input type="text" formControlName="name" name="name">
+  </label>
+  <button class="btn registerFormButton" (click)="this.edit()">Create</button>
+</form>
