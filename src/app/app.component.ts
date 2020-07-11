@@ -36,9 +36,11 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.categoryService.getCategories().subscribe(response => {
       this.categories = response.body;
-      console.log(this.categories);
     });
-    console.log(this.categories);
+
+    this.cart.articleAdded.subscribe(() => {
+      this.cartshop = this.cart.getAllItems();
+    });
   }
 
   isLogged() {

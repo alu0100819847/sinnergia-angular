@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 import {CartshopModel} from './cartshop.model';
 import {CookieService} from 'ngx-cookie-service';
 
@@ -9,13 +9,15 @@ export class CartshopService {
 
   cartshop: Array<CartshopModel> = [];
 
+  @Output() articleAdded: EventEmitter<boolean> = new EventEmitter();
+
   constructor(private cookies: CookieService) {
     this.checkCart();
   }
 
   checkCart(): void {
     this.cartshop = JSON.parse(localStorage.getItem('cart'));
-    if(this.cartshop == null) {
+    if (this.cartshop == null) {
       this.cartshop = [];
     }
   }
@@ -30,6 +32,7 @@ export class CartshopService {
       this.cartshop.push(item);
     }
     localStorage.setItem('cart', JSON.stringify(this.cartshop));
+    this.articleAdded.emit();
   }
 
   getAllItems() {
