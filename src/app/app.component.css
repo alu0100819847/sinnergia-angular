@@ -81,6 +81,20 @@
   height: 50%;
 }
 
-.yay {
+.cartBox {
   min-width: 30vw;
+}
+
+.cartTitles {
+  font-weight: bolder;
+
+}
+
+.cartContainer{
+  overflow: hidden;
+}
+
+.cancelButton{
+  width: 20px;
+  cursor: pointer;
 }

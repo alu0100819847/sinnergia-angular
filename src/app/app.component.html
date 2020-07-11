@@ -33,16 +33,18 @@
   </div>
 </div>
 
-<mat-menu  #menu="matMenu" xPosition="before">
-  <div class="row yay" >
-    <div class="col s6">Nombre</div>
-    <div class="col s1">nº</div>
+<mat-menu class="cartContainer"  #menu="matMenu" xPosition="before">
+  <div class="cartBox">
+    <div class="row " >
+      <div class="cartTitles col s4">Nombre</div>
+      <div class="cartTitles col s1">nº</div>
 
-  </div>
-  <div class="row" *ngFor="let item of cartshop">
-    <div class="col s6">{{item.name}}</div>
-    <div class="col s2">{{item.amount}}</div>
-    <div class="col s2"><button (click)="deleteFromCartShop(item)">Quitar</button></div>
+    </div>
+    <div class="row" *ngFor="let item of cartshop">
+      <div class="col s4">{{item.name}}</div>
+      <div class="col s2">{{item.amount}}</div>
+      <div class="col s2"><img class="cancelButton" src="../assets/img/cancel.png" (click)="deleteFromCartShop(item)"></div>
+    </div>
   </div>
 </mat-menu>
 <mat-sidenav-container class="main-content">
