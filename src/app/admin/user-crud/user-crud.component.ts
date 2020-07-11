@@ -15,10 +15,7 @@ export class UserCrudComponent implements OnInit {
   users: Array<UserAdminModel> = [];
 
   constructor(private http: HttpService, private dialog: MatDialog) {
-    this.http.get('/users').subscribe( (response) => {
-        this.users = response.body;
-      }
-    );
+    this.getUsers();
     console.log(this.users);
   }
 
@@ -28,7 +25,9 @@ export class UserCrudComponent implements OnInit {
   edit(user) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = user;
-    this.dialog.open(EditUserComponent, dialogConfig);
+    this.dialog.open(EditUserComponent, dialogConfig).afterClosed().subscribe(() =>
+      this.getUsers()
+    );
     console.log(user);
   }
 
@@ -37,5 +36,13 @@ export class UserCrudComponent implements OnInit {
     this.http.delete('/users/' + email).subscribe( response => {
       console.log('dummy: ' + response);
     });
+    this.getUsers();
+  }
+
+  getUsers() {
+    this.http.get('/users').subscribe( (response) => {
+        this.users = response.body;
+      }
+    );
   }
 }

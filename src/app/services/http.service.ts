@@ -12,8 +12,8 @@ import {NotificationService} from './notification.service';
 })
 export class HttpService {
   private headers: HttpHeaders;
-  private uri = 'http://localhost:8080';
-
+  //private uri = 'http://localhost:8080';
+  private uri = 'http://46.101.167.243:8080';
   private params: HttpParams;
   private responseType: string;
   constructor(private http: HttpClient, private session: SessionService, private notification: NotificationService) {

@@ -28,12 +28,8 @@ export class EditCategoryComponent implements OnInit {
   edit() {
     this.category.id = this.uploadForm.get('id').value;
     this.category.name = this.uploadForm.get('name').value;
-    console.log(this.category);
     this.http.put('/category', this.category).subscribe( response => {
-      console.log('dummy');
-      console.log('dummy' + response);
       this.dialog.closeAll();
-      console.log('dummy' + response);
     });
   }
 }
