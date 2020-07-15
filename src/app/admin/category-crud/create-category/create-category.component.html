@@ -3,7 +3,7 @@
   <label> Name
     <input type="text" formControlName="name" name="name">
   </label>
-  <select class="category-select" formControlName="categoryFamilyId" name="categoryFamilyId">
+  <select class="" formControlName="categoryFamilyId" name="categoryFamilyId" [hidden]>
     <option>No Family</option>
     <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
   </select>

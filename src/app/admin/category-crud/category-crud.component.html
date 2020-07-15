@@ -1,14 +1,14 @@
 
 <div class="row title-block">
   <div class="col s2 titles">Name</div>
-  <div class="col s2 titles">Family</div>
+  <div class="col s2 titles" hidden>Family</div>
   <div class="col s2 offset-s5 titles"><button class="btn" (click)="create()">New</button></div>
 </div>
 
 <div class="row" *ngFor="let category of categories">
   <div class="col s2 admin-field">{{category.name}}</div>
-  <div class="col s2 admin-field">{{getName(category.family)}}</div>
-  <div class="col">
+  <div class="col s2 admin-field" hidden>{{getName(category.family)}}</div>
+  <div class="col offset-s5">
     <button class="adminActionButton admin-button" [matMenuTriggerFor]="actions" mat-menu-item>
       <span class="material-icons">menu</span>
     </button>

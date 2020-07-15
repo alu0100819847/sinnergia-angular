@@ -1,3 +1,7 @@
 .category-select{
   display: unset;
 }
+
+.registerFormButton {
+  margin: 10px;
+}

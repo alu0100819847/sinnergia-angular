@@ -18,6 +18,10 @@
       <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
     </select>
   </label>
-  <input type="file" name="files" (change)="onFileSelect($event)">
-  <button class="btn registerFormButton" (click)="this.create()">Create</button>
+  <label> Image
+    <input type="file" name="files" (change)="onFileSelect($event)">
+  </label>
+  <div>
+    <button class="btn registerFormButton" (click)="this.create()">Create</button>
+  </div>
 </form>
